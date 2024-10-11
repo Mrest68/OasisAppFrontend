@@ -17,7 +17,7 @@ const scaleWidth = width / baseWidth;
 const scaleHeight = height / baseHeight;
 
 const Tabs = () => {
-    const [selectedTab, setSelectedTab] = useState('Interview');
+    const [selectedTab, setSelectedTab] = useState('TrainingModules');
     const [selectedCategory, setSelectedCategory] = useState('');
 
     const images = {

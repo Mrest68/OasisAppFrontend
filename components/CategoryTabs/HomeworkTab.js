@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions, Modal, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, Dimensions, Modal, TouchableOpacity, Image } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -8,6 +8,9 @@ const calcFont = (percent)=>{
     const size = width/375;
     return Math.round(percent*size);
 };
+const baseWidth = 375;
+const baseHeight = 667;
+const scale = Math.min(width / baseWidth, height / baseHeight); 
 
 const HomeworkTab = ({ selectedCategory }) => {
     const [hwTitle, setHwTitle] = useState('');
@@ -90,6 +93,7 @@ const HomeworkTab = ({ selectedCategory }) => {
                     <ScrollView style={styles.documentContainer}>
                         <Text style={styles.documentTitle}>{hwTitle}</Text>
                         <Text style={styles.documentContent}>{hwDescription}</Text>
+                        
                     </ScrollView>
                     <TouchableOpacity style={styles.closeButton} onPress={handleCloseModal}>
                         <Text style={styles.closeButtonText}>✖</Text>
@@ -99,6 +103,7 @@ const HomeworkTab = ({ selectedCategory }) => {
                         onPress={handleSubmit}
                         disabled={isSubmitted}
                     >
+                        
                         <Text style={styles.submitButtonText}>{isSubmitted ? 'Submitted' : 'Submit'}</Text>
                     </TouchableOpacity>
                 </View>
@@ -108,6 +113,7 @@ const HomeworkTab = ({ selectedCategory }) => {
 };
 
 const styles = StyleSheet.create({
+
     submitButton: {
         marginBottom: 40,
         backgroundColor: '#9dcff8',
@@ -143,7 +149,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     hwTitle: {
-        fontSize: calcFont(16),
+        fontSize: calcFont(17),
         // fontSize: '25',
         fontWeight: '500',
 
@@ -156,7 +162,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     expandButtonText: {
-        fontSize: 16,
+        fontSize: calcFont(16),
         color: 'white',
     },
     loadingText: {
@@ -177,16 +183,16 @@ const styles = StyleSheet.create({
         height: height * 0.8,
     },
     documentTitle: {
-        fontSize: calcFont(16),
+        fontSize: calcFont(20),
         fontWeight: 'bold',
         marginTop: 100,
         textAlign:'center',
     },
     documentContent: {
         fontSize: calcFont(16),
-        color: '#333',
+        color: 'black',
         marginTop: 30,
-        lineHeight:calcFont(25),
+        lineHeight:calcFont(30),
     },
     closeButton: {
         position: 'absolute',

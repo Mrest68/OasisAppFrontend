@@ -54,7 +54,7 @@ export default function App() {
           <Stack.Screen name='LandingPage' options={{ headerShown: false }} component={LandingPage}/>
             {/* {(props) => <Login {...props} setIsAuthenticated={setIsAuthenticated} setUserRole={setUserRole} />}
              */}
-          <Stack.Screen name='UserHome' options={{headerShown:false}} component={UserHome}/>
+          <Stack.Screen name='UserHome' options={{headerShown: false }} component={UserHome}/>
         </Stack.Navigator>      
    
 
