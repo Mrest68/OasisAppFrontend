@@ -25,8 +25,7 @@ const Tabs = () => {
             { source: require('../assets/images/oasis_badge.png'), category: 'Passing' },
             { source: require('../assets/images/oasis_badge.png'), category: 'Shooting' },
             { source: require('../assets/images/oasis_badge.png'), category: 'Dribbling' },
-            { source: require('../assets/images/oasis_badge.png'), category: 'Control' },
-            { source: require('../assets/images/oasis_badge.png'), category: 'Attacking' },
+            { source: require('../assets/images/oasis_badge.png'), category: 'Speed & Agility' },
         ],
         Interview: [
             { source: require('../assets/images/oasis_badge.png'), category: 'Player' },

@@ -8,7 +8,7 @@ const calcFont = (percent)=>{
     const size = width/375;
     return Math.round(size*percent)
 }
-const UserHome = ()=>{
+export default function UserHome({navigation}){
     return (
         <View style={styles.container} >
         <HomeHeader/>
@@ -32,4 +32,3 @@ const styles = StyleSheet.create({
     }
 })
 
-export default UserHome;
